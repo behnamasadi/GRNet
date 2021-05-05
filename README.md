@@ -40,6 +40,49 @@ The pretrained models on ShapeNet are available as follows:
 
 ## Prerequisites
 
+### Google colab ssh
+
+1. Install `colab_ssh` on google colab
+```!pip install colab_ssh --upgrade
+```
+Then run:
+```
+from colab_ssh import launch_ssh_cloudflared, init_git_cloudflared
+launch_ssh_cloudflared(password="<PUT_YOUR_PASSWORD_HERE>")
+```
+2. Install cloudflared
+Downlaod cloudflare [here](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/install-and-setup/installation)
+```
+wget -q https://bin.equinox.io/c/VdrWdbjqyF/cloudflared-stable-linux-amd64.deb
+dpkg -i cloudflared-stable-linux-amd64.deb
+```
+3. Append the following to your SSH config file (usually under ~/.ssh/config)
+```
+Host *.trycloudflare.com
+	HostName %h
+	User root
+	Port 22
+	ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
+```
+4. To stablish a connection, type this command:
+
+```ssh witness-atmospheric-structure-kinds.trycloudflare.com
+```
+
+Ref: [1](https://pypi.org/project/colab-ssh/)	
+	
+5. Install  Anaconda
+Install prerequisite:
+ 
+```apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+```
+Download Anaconda
+```	
+wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
+bash Anaconda3-2020.11-Linux-x86_64.sh
+export PATH="/root/anaconda3/bin:$PATH"
+```
+
 #### Clone the Code Repository
 
 ```
