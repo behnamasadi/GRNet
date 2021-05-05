@@ -43,7 +43,8 @@ The pretrained models on ShapeNet are available as follows:
 ### Google colab ssh
 
 1. Install `colab_ssh` on google colab
-```!pip install colab_ssh --upgrade
+```
+!pip install colab_ssh --upgrade
 ```
 Then run:
 ```
@@ -66,7 +67,8 @@ Host *.trycloudflare.com
 ```
 4. To stablish a connection, type this command:
 
-```ssh witness-atmospheric-structure-kinds.trycloudflare.com
+```
+ssh witness-atmospheric-structure-kinds.trycloudflare.com
 ```
 
 Ref: [1](https://pypi.org/project/colab-ssh/)	
@@ -74,7 +76,8 @@ Ref: [1](https://pypi.org/project/colab-ssh/)
 5. Install  Anaconda
 Install prerequisite:
  
-```apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+```
+apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 ```
 Download Anaconda
 ```	
